@@ -45,6 +45,7 @@
         
         //check selected string
         NSString* trimString = [selectedString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        trimString = [trimString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         if (!trimString || trimString.length < 1 || [trimString isEqualToString:@"\n"]) {
             completionHandler(nil);
             return;
